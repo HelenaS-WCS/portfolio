@@ -32,11 +32,11 @@ if selection == "Présentation":
     with col2:   
         
         st.write("Je suis Helena Steyaert, ancienne technicienne, puis ingénieure matériaux au sein d’un laboratoire d’essais mécaniques pour des matériaux destinés à l’aéronautique.")
-        st.write("""A mon dernier poste, j’ai pu découvrir python que l'on utilisait pour automatiser certaines tâches. 
+        st.write("""A mon dernier poste, j’ai pu découvrir Python que l'on utilisait pour automatiser certaines tâches. 
                 J’ai ensuite commencé à m’auto-former et depuis mon intérêt n’a fait que grandir. 
                 Après une longue période de réflexion, ainsi qu’un bilan de compétences qui a fait ressortir la Data analyse,
-                j’ai décidé de sauter le pas et j’ai fait une formation certifiante de Data Analyst.""") 
-        st.write("""Lors de cette formation j’ai pu approfondir mes connaissances en python, ainsi qu’apprendre le SQL,la data-visualisation sur Power BI et les bases du machine learning. 
+                j’ai décidé de sauter le pas et j’ai suivi une formation certifiante de Data Analyst.""") 
+        st.write("""Lors de cette formation j’ai pu approfondir mes connaissances en Python, ainsi qu’apprendre le SQL, la data-visualisation sur Power BI et les bases du machine learning. 
                 J’ai réalisé quelques projets, que vous pouvez découvrir dans la section "projets". 
                 Je souhaite continuer mes études en effectuant une alternance de data ingénieur à partir de mars ou octobre 2026.""")
         st.write("""Mes expériences professionnelles précédentes m’ont permis de développer une certaine rigueur analytique, une vraie capacité à comprendre les exigences clients, et aussi une bonne base en gestion de projet. Je suis autonome, polyvalente, mais surtout très motivée pour continuer à évoluer dans le domaine de la data.""")    
@@ -59,7 +59,7 @@ if selection == "Projets":
         st.subheader("Première partie : Calcul des métrique en SQL")
         st.write("""Avant de passer sur powerBI, il a fallu calculer les KPI demandés par le client en SQL. 
                  Ceci nous a permis d'explorer la base de données et de déterminer quels attributs étaient nécessaires aux calculs des KPI. 
-                 Des vues ont été créées. Définition des tables de fait (FACT) et de dimensions (DIM). Création du modèle relationnel en étoile exploitable dans Power BI.""")
+                 Des vues ont été créées, nous avons défini des tables de fait (FACT) et de dimensions (DIM) pour ensuite créer un modèle relationnel en étoile exploitable dans Power BI.""")
         cola,colb = st.columns([2,1])
         with cola:
             st.subheader("Requête SQL:")
@@ -77,8 +77,8 @@ if selection == "Projets":
             st.image("images/projet 1/SQL3result.PNG",width="stretch")
             
         st.subheader("Deuxième partie : Transformation et modélisation des données")
-        st.write(""" une fois les vues créées, nous avons pu importer nos tables et nos données dans Power query afin de transformer et nettoyer les données. 
-                 Nous avons également complété le Modèle relationnel des données dans Power Bi et ajouté la table des dates (pour les mesures DAX notamment).""")
+        st.write(""" une fois les vues créées, nous avons pu importer nos tables et nos données dans Power Query afin de transformer et nettoyer les données. 
+                 Nous avons également complété le modèle relationnel des données dans Power BI et ajouté la table des dates (pour les mesures DAX notamment).""")
         st.image("images/projet 1/BImodel.PNG",width="stretch")
         
         st.subheader("Troisième partie : Création du tableau de bord")
