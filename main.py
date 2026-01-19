@@ -15,10 +15,12 @@ with st.sidebar:
     selection = option_menu(
             menu_title=None,
             options = ["Présentation", "Projets","CV"])
+    
 # Page de présentation    
 if selection == "Présentation":
     st.title("Bienvenue sur mon portfolio !")
     
+    # Colonnes : 1 = photo + coordonnées, 2 = présentation
     col1,col2 = st.columns([1.8,3])
     with col1: 
         st.image("images/Photo.jpg",width=300)
@@ -32,16 +34,20 @@ if selection == "Présentation":
         st.write("Je suis Helena Steyaert, ancienne technicienne, puis ingénieure matériaux au sein d’un laboratoire d’essais mécaniques pour des matériaux destinés à l’aéronautique.")
         st.write("""A mon dernier poste, j’ai pu découvrir python que l'on utilisait pour automatiser certaines tâches. 
                 J’ai ensuite commencé à m’auto-former et depuis mon intérêt n’a fait que grandir. 
-                Après une longue période de réflexion, ainsi qu’un bilan de compétence qui a fait ressortir la Data analyse,
+                Après une longue période de réflexion, ainsi qu’un bilan de compétences qui a fait ressortir la Data analyse,
                 j’ai décidé de sauter le pas et j’ai fait une formation certifiante de Data Analyst.""") 
         st.write("""Lors de cette formation j’ai pu approfondir mes connaissances en python, ainsi qu’apprendre le SQL,la data-visualisation sur Power BI et les bases du machine learning. 
-                J’ai réalisé quelques projets, que vous pourrez découvrir dans la section "projets". 
+                J’ai réalisé quelques projets, que vous pouvez découvrir dans la section "projets". 
                 Je souhaite continuer mes études en effectuant une alternance de data ingénieur à partir de mars ou octobre 2026.""")
-        st.write("""Malgré mon statut junior dans ce domaine, mes expériences professionnelles précédentes m’ont permis de développer une certaine rigueur analytique, une vraie capacité à comprendre les exigences clients, et aussi une bonne base en gestion de projet. Je suis autonome, polyvalente, mais surtout très motivée pour continuer à évoluer dans le domaine de la data.""")    
+        st.write("""Mes expériences professionnelles précédentes m’ont permis de développer une certaine rigueur analytique, une vraie capacité à comprendre les exigences clients, et aussi une bonne base en gestion de projet. Je suis autonome, polyvalente, mais surtout très motivée pour continuer à évoluer dans le domaine de la data.""")    
 
 # Page de projets
 if selection == "Projets":
+    
+    # Configuration de la page
     st.set_page_config(page_title="Helena Steyaert - Data analyst",layout="wide")
+    
+    # Création des onglets
     tab1, tab2, tab3, tab4 = st.tabs(["📈 Projet 1 - SQL & BI", "🎬 Projet 2 - Streamlit & ML", "🐮 Projet 3", "🎲 Mission Data - PowerBI"])
 
     # Projet 1 - Power BI
@@ -53,7 +59,7 @@ if selection == "Projets":
         st.subheader("Première partie : Calcul des métrique en SQL")
         st.write("""Avant de passer sur powerBI, il a fallu calculer les KPI demandés par le client en SQL. 
                  Ceci nous a permis d'explorer la base de données et de déterminer quels attributs étaient nécessaires aux calculs des KPI. 
-                 Des views ont été créées, après avoir déterminé les tables FACT et DIM, afin de créer un modèle en étoile exploitable par PowerBI.""")
+                 Des vues ont été créées. Définition des tables de fait (FACT) et de dimensions (DIM). Création du modèle relationnel en étoile exploitable dans Power BI.""")
         cola,colb = st.columns([2,1])
         with cola:
             st.subheader("Requête SQL:")
@@ -71,12 +77,12 @@ if selection == "Projets":
             st.image("images/projet 1/SQL3result.PNG",width="stretch")
             
         st.subheader("Deuxième partie : Transformation et modélisation des données")
-        st.write("""Une fois les views créées, on a pu les importer dans powerquery afin de nettoyer et transformer les données. 
-                 Une modélisation sur la base de tables DIM et FACT a été appliquée.""")
+        st.write(""" une fois les vues créées, nous avons pu importer nos tables et nos données dans Power query afin de transformer et nettoyer les données. 
+                 Nous avons également complété le Modèle relationnel des données dans Power Bi et ajouté la table des dates (pour les mesures DAX notamment).""")
         st.image("images/projet 1/BImodel.PNG",width="stretch")
         
         st.subheader("Troisième partie : Création du tableau de bord")
-        st.write("""Avec nos données dans un modèle propre et exploitable, on a pu créer un tableau de bord interactif avec Power BI. 
+        st.write("""Avec nos données dans un modèle propre et exploitable, Nous avons pu créer un tableau de bord interactif avec Power BI. 
                  Ce tableau de bord permet d'analyser les performances de l'entreprise, avec des filtres et des visualisations dynamiques.""")
         cola,colb = st.columns([1,1])
         with cola:
@@ -90,6 +96,7 @@ if selection == "Projets":
     # Projet 2 - Recommandation des films
     with tab2:
         st.title("Projet 2 - Application de recommandation de films avec ML")
+        st.write("🔗 [Vous pouvez découvrir notre application ici](https://filmdatalab.streamlit.app/)")
 
         st.subheader("Objectif:")
         st.write("""Création d'un moteur de recommandation de films sur streamlit avec un modèle de Machine Learning intégré.
@@ -154,7 +161,8 @@ if selection == "Projets":
         with col2:
             st.image("images/projet 2/streamlit2.PNG",width="stretch")
             st.image("images/projet 2/streamlit4.PNG",width="stretch")
-    # Projet 3 - en cours
+            
+    # Projet 3 - en cours (Gouts et Couleurs)
     with tab3:
         st.title("Projet 3 - En cours de réalisation")
         st.image("images/projet 3/work-in-progress.svg",width=400)
@@ -167,11 +175,14 @@ if selection == "Projets":
                  Après une courte phase d'exploration et de nettoyage des données, j'ai pu déterminer les KPI les plus pertinents et créer un rapport Power BI interactif en seulement 2 jours.""")
         st.image("images/Mission Data/md1.PNG",width="stretch")
         st.image("images/Mission Data/md2.PNG",width="stretch")
+        
 # Page CV
 if selection == "CV":
     st.title("CV - Helena Steyaert")
     st.image("images/CV .jpg",width=800)
+    
+    # Bouton de téléchargement
     st.download_button(
-        label="Télécharger CV",
+        label="Télécharger Mon CV",
         data=open("images/1 - Helena Steyaert - CV .pdf", "rb").read(),
         file_name="Helena_Steyaert_CV.pdf")
