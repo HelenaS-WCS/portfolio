@@ -53,7 +53,7 @@ if selection == "Projets":
     # Projet 1 - Power BI
     with tab1:
         st.title("SQL & BI - Toys & Models")
-        st.subheader("Objectif:")
+        st.subheader("Objectif :")
         st.write("""Création d'un tableau de bord dynamique qui peut être actualisé chaque matin pour obtenir les dernières informations afin de gérer l’entreprise Toys & Models.
                  Le tableau de bord devait s’articuler autour de 4 axes : ventes, finances, logistique, et ressources humaines.""")
         st.subheader("Première partie : Calcul des métrique en SQL")
@@ -98,9 +98,9 @@ if selection == "Projets":
         st.title("Projet 2 - Application de recommandation de films avec ML")
         st.write("🔗 [Vous pouvez découvrir notre application ici](https://filmdatalab.streamlit.app/)")
 
-        st.subheader("Objectif:")
+        st.subheader("Objectif :")
         st.write("""Création d'un moteur de recommandation de films sur streamlit avec un modèle de Machine Learning intégré.
-                 On a utilisé les bases de données IMDB et TMDB pour créer cette application.""")
+                 Nous avons utilisé les bases de données IMDB et TMDB pour créer cette application.""")
         
         st.subheader("Première partie : Etude de marché")
         st.write("""Nous avons commencé par une étude de marché sur la consommation de cinéma en Loire-Atlantique, afin de mieux comprendre les attentes et les préférences du public local. 
@@ -114,7 +114,7 @@ if selection == "Projets":
         with  colb:
             st.image("images/projet 2/Etude de marché2.PNG",width="stretch")
             
-        st.write("""Après cette étude nous avons décidé de nous focaliser sur les comédies et les films d'animation, en version française, avec une notre supérieure à 6/10
+        st.write("""Après cette étude nous avons décidé de nous focaliser sur les comédies et les films d'animation, en version française, avec une note supérieure à 6/10
                  Ceci répond aux préférences du public local qui reste relativement jeune.""")
             
         st.subheader("Deuxième partie : Récupération, transformation et nettoyage des données")
@@ -142,15 +142,15 @@ if selection == "Projets":
             st.image("images/projet 2/python0result.PNG",width="stretch")
 
         st.subheader("Troisième partie : Machine Learning")
-        st.write("""Pour pouvoir recommander des films proche d'un film donné, nous avons du créer un modèle de Machine Learning.
+        st.write("""Pour pouvoir recommander des films proches d'un film donné, nous avons du créer un modèle de Machine Learning.
                  Nous avons choisi Nearest Neighbors, qui permet de trouver les films les plus similaires en fonction des features choisies.""")
         st.image("images/projet 2/ML.PNG",width=1000)
         
         st.subheader("Quatrième partie : Création de l'application Streamlit")
         st.write("""Une fois tous les éléments prêts, nous avons pu créer l'application de recommandation de films avec Streamlit.
                  Le système de recommandation a été intégré avec un fichier joblib pour plus de rapidité.
-                 Une option de recherche par filtres a également été ajouté. 
-                 Nous avons tout mis en ouvre pour créer une application fluide, ergonomique et (tout simplement) jolie.""")
+                 Une option de recherche par filtres a également été ajoutée. 
+                 Nous avons tout mis en oeuvre pour créer une application fluide, ergonomique et (tout simplement) jolie.""")
         
         col1,col2 = st.columns([1,1])
         
