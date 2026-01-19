@@ -48,7 +48,7 @@ if selection == "Projets":
     st.set_page_config(page_title="Helena Steyaert - Data analyst",layout="wide")
     
     # Création des onglets
-    tab1, tab2, tab3, tab4 = st.tabs(["📈 Projet 1 - SQL & BI", "🎬 Projet 2 - Streamlit & ML", "🐮 Projet 3", "🎲 Mission Data - PowerBI"])
+    tab1, tab2, tab3, tab4 = st.tabs(["📈 Projet 1 - SQL & BI", "🎬 Projet 2 - Streamlit & ML", "🐮 Projet 3", "🎲 Mission Data - Power BI"])
 
     # Projet 1 - Power BI
     with tab1:
