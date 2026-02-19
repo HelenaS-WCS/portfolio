@@ -48,7 +48,7 @@ if selection == "Projets":
     st.set_page_config(page_title="Helena Steyaert - Data analyst",layout="wide")
     
     # Création des onglets
-    tab1, tab2, tab3, tab4 = st.tabs(["📈 Projet 1 - SQL & BI", "🎬 Projet 2 - Streamlit & ML", "🐮 Projet 3", "🎲 Mission Data - Power BI"])
+    tab1, tab2, tab3, tab4 = st.tabs(["📈 Projet 1 - SQL & BI", "🎬 Projet 2 - Streamlit & ML", "🐮 Projet 3 - Cas réel", "🎲 Mission Data - Power BI"])
 
     # Projet 1 - Power BI
     with tab1:
@@ -162,10 +162,227 @@ if selection == "Projets":
             st.image("images/projet 2/streamlit2.PNG",width="stretch")
             st.image("images/projet 2/streamlit4.PNG",width="stretch")
             
-    # Projet 3 - en cours (Gouts et Couleurs)
+    # Projet 3 - Les Gouts et Couleurs
     with tab3:
-        st.title("Projet 3 - En cours de réalisation")
-        st.image("images/projet 3/work-in-progress.svg",width=400)
+        
+        # HEADER
+
+        st.title("PROJET 3 — Optimisation et Refonte d’un Reporting Power BI")
+        st.subheader("Les Goûts et les Couleurs — Rocamadour (Lot)")
+        st.markdown("**Objectif : Optimiser, restructurer et moderniser un reporting Power BI existant.**")
+
+        st.markdown("---")
+
+        # CONTEXTE ENTREPRISE
+
+        st.header("🏢 Contexte")
+
+        col1, col2 = st.columns([2, 1])
+
+        with col1:
+            st.markdown("""
+        **Les Goûts et les Couleurs** est un GAEC situé à Rocamadour.  
+        L’exploitation élève vaches et chèvres laitières et transforme le lait en crème glacée vendue à la ferme et en magasins de producteurs.
+
+        Le PDG utilisait depuis plusieurs années un rapport Power BI construit en interne pour suivre les KPI financiers et de performance.
+
+        ⚠️ Problème :  
+        - Fichier devenu trop lourd  
+        - Perte de lisibilité  
+        - Trop de mesures  
+        - Modèle non optimisé  
+        - Expérience mobile inexistante  
+        """)
+
+        with col2:
+            st.image("placeholder_ferme.jpg", caption="📷 Photo de la ferme (placeholder)")
+            st.image("placeholder_localisation.jpg", caption="📍 Localisation Rocamadour (placeholder)")
+
+        st.markdown("---")
+
+        # EXPLORATION DES DONNÉES
+
+        st.header("🔎 Exploration & Audit Technique")
+
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            st.markdown("### Base SQLAnywhere")
+            st.markdown("""
+        - 94 tables  
+        - +1000 colonnes  
+        - 2 relations seulement  
+        """)
+            st.image("placeholder_sql_schema.png", caption="Schéma base de données (placeholder)")
+
+        with col2:
+            st.markdown("### Power Query")
+            st.markdown("""
+        - 9 tables importées  
+        - 57 colonnes  
+        - 2 nested tables  
+        """)
+            st.image("placeholder_powerquery.png", caption="Power Query avant nettoyage (placeholder)")
+
+        with col3:
+            st.markdown("### Rapport Power BI initial")
+            st.markdown("""
+        - 22 pages  
+        - 337 mesures  
+        - 32 tables  
+        - 9 groupes de calcul  
+        """)
+            st.image("placeholder_rapport_initial.png", caption="Ancien rapport (placeholder)")
+
+        st.markdown("---")
+
+        # AMÉLIORATION RAPPORT
+
+        st.header("⚙️ Optimisation du Rapport Existant")
+
+        st.subheader("1️⃣ Allègement du modèle")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.markdown("""
+        - Analyse des colonnes utilisées via DAX Studio  
+        - Suppression des colonnes inutilisées  
+        - Nettoyage des filtres cachés  
+        - Correction d’erreurs de calcul  
+        """)
+
+        with col2:
+            st.metric("Colonnes", "57 ➜ 31")
+            st.image("placeholder_daxstudio.png", caption="Analyse DAX Studio (placeholder)")
+
+        st.subheader("2️⃣ Refonte UX & Lisibilité")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.markdown("""
+        - Uniformisation du thème  
+        - Suppression des visuels en double  
+        - Transformation de tableaux en graphiques  
+        - Réduction de 22 ➜ 13 pages  
+        - Création de nouvelles mesures DAX  
+        """)
+
+        with col2:
+            st.metric("Pages du rapport", "22 ➜ 13")
+            st.image("placeholder_nouveau_design.png", caption="Nouveau design du rapport (placeholder)")
+
+        st.markdown("---")
+
+        # VERSION MOBILE
+
+        st.header("📱 Version Mobile")
+
+        col1, col2 = st.columns([1, 1])
+
+        with col1:
+            st.markdown("""
+        **Pourquoi ?**
+        - Accessibilité en rendez-vous bancaire  
+        - Consultation rapide des KPI  
+
+        **Mise en place :**
+        - Sélection des visuels clés  
+        - Adaptation responsive  
+        - Publication sur Power BI Service  
+        """)
+
+        with col2:
+            st.image("placeholder_mobile.png", caption="Version mobile Power BI (placeholder)")
+
+        st.markdown("---")
+        
+        # PAGINATED REPORT
+
+        st.header("🖨️ Paginated Report")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.markdown("""
+        **Objectif :**
+        - Version imprimable du Compte de Résultat  
+
+        **Outils :**
+        - Power BI Report Builder  
+        - Connexion au dataset Power BI Service  
+        - Récupération des mesures existantes  
+        """)
+
+        with col2:
+            st.image("placeholder_paginated.png", caption="Exemple Paginated Report (placeholder)")
+
+        st.markdown("---")
+
+        # =========================
+        # NOUVEAU MODÈLE DATA
+        # =========================
+
+        st.header("🧠 Refonte du Modèle de Données")
+
+        st.subheader("Problème initial")
+
+        st.markdown("""
+        - +300 mesures avec numéros de comptes hard-coded  
+        - Tables non séparées en faits / dimensions  
+        - Relations complexes et peu optimisées  
+        """)
+
+        st.subheader("Solution proposée")
+
+        st.markdown("""
+        ✅ Création de tables dimensions (DIM_Bilan, DIM_SIG, DIM_CDR)  
+        ✅ Séparation tables de faits / dimensions  
+        ✅ Suppression du hard-coding des comptes  
+        ✅ Simplification drastique des mesures  
+        """)
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.image("placeholder_ancien_modele.png", caption="Ancien modèle (placeholder)")
+
+        with col2:
+            st.image("placeholder_nouveau_modele.png", caption="Nouveau modèle optimisé (placeholder)")
+
+        st.markdown("---")
+
+        # =========================
+        # CONCLUSION
+        # =========================
+
+        st.header("🎯 Conclusion")
+
+        st.markdown("""
+        ### Ce que ce projet démontre :
+
+        - Capacité à auditer un modèle existant complexe  
+        - Compréhension d’une base comptable  
+        - Optimisation technique avancée Power BI  
+        - Amélioration UX et performance  
+        - Proposition d’architecture data professionnelle  
+
+        ### Difficultés rencontrées :
+        - Mesures imbriquées sur 7 niveaux  
+        - Complexité comptable  
+        - Apprentissage Paginated Reports  
+
+        ### Perspectives :
+        - Finalisation du nouveau modèle  
+        - Résolution des bugs restants  
+        - Création d’un nouveau rapport basé sur l’architecture optimisée  
+        """)
+
+        st.markdown("---")
+
+        st.success("📌 Demo disponible sur demande")
+
 
     # Mission data - Power BI en 2 jours
     with tab4:
