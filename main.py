@@ -164,45 +164,24 @@ if selection == "Projets":
             
     # Projet 3 - Les Gouts et Couleurs
     with tab3:
-        
-        # HEADER
-
-        st.title("PROJET 3 — Optimisation et Refonte d’un Reporting Power BI")
-        st.subheader("Les Goûts et les Couleurs — Rocamadour (Lot)")
-        st.markdown("**Objectif : Optimiser, restructurer et moderniser un reporting Power BI existant.**")
-
-        st.markdown("---")
-
+        st.title("Projet 3 — Optimisation et Refonte d’un Reporting Power BI")
+        st.subheader("Objectif : ")
+        st.write("""Le PDG de la société utilise depuis plusieurs années un rapport Power BI qu’il a conçu lui-même afin de suivre les indicateurs clés de performance tout au long de l’année. 
+                 Avec le temps, le fichier s’est considérablement alourdi, réduisant la visibilité des KPI essentiels et rendant l’outil moins ergonomique.
+                L’objectif de ce projet est de rendre le rapport existant plus clair et plus simple d’utilisation, d’y intégrer une version mobile ainsi qu’un Paginated Report, 
+                et enfin de mener une étude pour concevoir un modèle plus performant.""")
         # CONTEXTE ENTREPRISE
 
-        st.header("🏢 Contexte")
-
-        col1, col2 = st.columns([2, 1])
-
-        with col1:
-            st.markdown("""
-        **Les Goûts et les Couleurs** est un GAEC situé à Rocamadour.  
-        L’exploitation élève vaches et chèvres laitières et transforme le lait en crème glacée vendue à la ferme et en magasins de producteurs.
-
-        Le PDG utilisait depuis plusieurs années un rapport Power BI construit en interne pour suivre les KPI financiers et de performance.
-
-        ⚠️ Problème :  
-        - Fichier devenu trop lourd  
-        - Perte de lisibilité  
-        - Trop de mesures  
-        - Modèle non optimisé  
-        - Expérience mobile inexistante  
-        """)
-
-        with col2:
-            st.image("placeholder_ferme.jpg", caption="📷 Photo de la ferme (placeholder)")
-            st.image("placeholder_localisation.jpg", caption="📍 Localisation Rocamadour (placeholder)")
-
-        st.markdown("---")
+        st.subheader("Les Goûts et Couleurs")
+        st.write(""" Les Gouts et les Couleurs est une société agricole, plus précisément un GAEC. Son cheptel est constitué de vaches et de chèvres laitières. 
+                     Le lait est transformée en crème glacée dans le laboratoire sur place et vendu directement à la ferme ainsi que dans des magasins de producteurs""")
+        st.write("""La ferme est située à Rocamadour dans le Lot, un emplacement stratégique au cœur du tourisme Lotois.
+                    Elle y est installée depuis 2010. """)
+        st.image("images/projet 3/varied/entreprise.PNG", caption="Photo de la ferme",width=500)
 
         # EXPLORATION DES DONNÉES
 
-        st.header("🔎 Exploration & Audit Technique")
+        st.subheader("Première partie : Découverte et exploration des données")
 
         col1, col2, col3 = st.columns(3)
 
@@ -234,13 +213,11 @@ if selection == "Projets":
         """)
             st.image("placeholder_rapport_initial.png", caption="Ancien rapport (placeholder)")
 
-        st.markdown("---")
-
         # AMÉLIORATION RAPPORT
 
-        st.header("⚙️ Optimisation du Rapport Existant")
+        st.header(" Optimisation du Rapport Existant")
 
-        st.subheader("1️⃣ Allègement du modèle")
+        st.subheader("Allègement du modèle")
 
         col1, col2 = st.columns(2)
 
@@ -256,7 +233,7 @@ if selection == "Projets":
             st.metric("Colonnes", "57 ➜ 31")
             st.image("placeholder_daxstudio.png", caption="Analyse DAX Studio (placeholder)")
 
-        st.subheader("2️⃣ Refonte UX & Lisibilité")
+        st.subheader("Refonte UX & Lisibilité")
 
         col1, col2 = st.columns(2)
 
@@ -272,8 +249,6 @@ if selection == "Projets":
         with col2:
             st.metric("Pages du rapport", "22 ➜ 13")
             st.image("placeholder_nouveau_design.png", caption="Nouveau design du rapport (placeholder)")
-
-        st.markdown("---")
 
         # VERSION MOBILE
 
@@ -295,12 +270,10 @@ if selection == "Projets":
 
         with col2:
             st.image("placeholder_mobile.png", caption="Version mobile Power BI (placeholder)")
-
-        st.markdown("---")
         
         # PAGINATED REPORT
 
-        st.header("🖨️ Paginated Report")
+        st.header("Paginated Report")
 
         col1, col2 = st.columns(2)
 
@@ -318,13 +291,11 @@ if selection == "Projets":
         with col2:
             st.image("placeholder_paginated.png", caption="Exemple Paginated Report (placeholder)")
 
-        st.markdown("---")
-
         # =========================
         # NOUVEAU MODÈLE DATA
         # =========================
 
-        st.header("🧠 Refonte du Modèle de Données")
+        st.header("Refonte du Modèle de Données")
 
         st.subheader("Problème initial")
 
@@ -351,13 +322,9 @@ if selection == "Projets":
         with col2:
             st.image("placeholder_nouveau_modele.png", caption="Nouveau modèle optimisé (placeholder)")
 
-        st.markdown("---")
-
-        # =========================
         # CONCLUSION
-        # =========================
 
-        st.header("🎯 Conclusion")
+        st.header("Conclusion")
 
         st.markdown("""
         ### Ce que ce projet démontre :
