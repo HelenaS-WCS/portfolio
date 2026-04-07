@@ -387,7 +387,7 @@ if selection == "Projets":
 # Page CV
 if selection == "CV":
     st.title("CV - Helena Steyaert")
-    st.image("images/CV.jpg",width=800)
+    st.image("images/CV.JPG",width=800)
     
     # Bouton de téléchargement
     st.download_button(
