@@ -38,7 +38,7 @@ if selection == "Présentation":
                 j’ai décidé de sauter le pas et j’ai suivi une formation certifiante de Data Analyst.""") 
         st.write("""Lors de cette formation j’ai pu approfondir mes connaissances en Python, ainsi qu’apprendre le SQL, la data-visualisation sur Power BI et les bases du machine learning. 
                 J’ai réalisé quelques projets, que vous pouvez découvrir dans la section "projets". 
-                Je souhaite continuer mes études en effectuant une alternance de data ingénieur à partir de mars ou octobre 2026.""")
+                Je souhaite continuer mes études en effectuant une alternance de data ingénieur à partir d'octobre 2026.""")
         st.write("""Mes expériences professionnelles précédentes m’ont permis de développer une certaine rigueur analytique, une vraie capacité à comprendre les exigences clients, et aussi une bonne base en gestion de projet. Je suis autonome, polyvalente, mais surtout très motivée pour continuer à évoluer dans le domaine de la data.""")    
 
 # Page de projets
@@ -192,16 +192,14 @@ if selection == "Projets":
         - +1000 colonnes  
         - 2 relations seulement  
         """)
-            st.image("placeholder_sql_schema.png", caption="Schéma base de données (placeholder)")
 
         with col2:
             st.markdown("### Power Query")
             st.markdown("""
         - 9 tables importées  
         - 57 colonnes  
-        - 2 nested tables  
+        - 2 tables imbriquées  
         """)
-            st.image("placeholder_powerquery.png", caption="Power Query avant nettoyage (placeholder)")
 
         with col3:
             st.markdown("### Rapport Power BI initial")
@@ -211,45 +209,79 @@ if selection == "Projets":
         - 32 tables  
         - 9 groupes de calcul  
         """)
-            st.image("placeholder_rapport_initial.png", caption="Ancien rapport (placeholder)")
 
         # AMÉLIORATION RAPPORT
 
-        st.header(" Optimisation du Rapport Existant")
-
-        st.subheader("Allègement du modèle")
+        st.subheader(" Deuxième partie : Optimisation du Rapport Existant")
 
         col1, col2 = st.columns(2)
 
         with col1:
-            st.markdown("""
+            st.subheader("1. Allègement du modèle")
+            st.markdown("""               
         - Analyse des colonnes utilisées via DAX Studio  
         - Suppression des colonnes inutilisées  
         - Nettoyage des filtres cachés  
-        - Correction d’erreurs de calcul  
+        - Correction d’erreurs de calcul 
         """)
-
+            st.metric("Résultat", "57 ➜ 31 colonnes")
         with col2:
-            st.metric("Colonnes", "57 ➜ 31")
-            st.image("placeholder_daxstudio.png", caption="Analyse DAX Studio (placeholder)")
 
-        st.subheader("Refonte UX & Lisibilité")
+            st.image("images/projet 3/varied/DAX studio.PNG", caption="Analyse DAX Studio")
 
-        col1, col2 = st.columns(2)
-
+        col1, col2, col3 = st.columns(3)
         with col1:
+            st.image("images/projet 3/nettoyage_donnees/nettoyage_donnees_3.PNG", caption="Recencement des colonnes utilisées et leurs dépendances")
+        
+        with col2:
+            st.image("images/projet 3/nettoyage_donnees/theorique.PNG", caption="Colonnes à garder obligatoirement")
+            
+        with col3:
+            st.image("images/projet 3/nettoyage_donnees/reel.PNG", caption="Collonnes réellement gardées après nettoyage")
+
+        
+        
+        st.subheader("2. Refonte UX afin d'améliorer la lisibilité")
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            
             st.markdown("""
         - Uniformisation du thème  
         - Suppression des visuels en double  
         - Transformation de tableaux en graphiques  
-        - Réduction de 22 ➜ 13 pages  
+        - Création de pages par thème (bilan, SIG, CDR)  
         - Création de nouvelles mesures DAX  
         """)
-
+            
         with col2:
-            st.metric("Pages du rapport", "22 ➜ 13")
-            st.image("placeholder_nouveau_design.png", caption="Nouveau design du rapport (placeholder)")
+            st.metric("Résultat", "22 ➜ 13 Pages")
 
+        st.subheader("Rapport avant modifications :")
+        
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.image("images/projet 3/nettoyage_donnees/nettoyage_donnees_3.PNG", caption="Recencement des colonnes utilisées et leurs dépendances")
+        
+        with col2:
+            st.image("images/projet 3/nettoyage_donnees/theorique.PNG", caption="Colonnes à garder obligatoirement")
+            
+        with col3:
+            st.image("images/projet 3/nettoyage_donnees/reel.PNG", caption="Collonnes réellement gardées après nettoyage")
+        
+        
+        st.subheader("Rapport après modifications :") 
+        
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.image("images/projet 3/nettoyage_donnees/nettoyage_donnees_3.PNG", caption="Recencement des colonnes utilisées et leurs dépendances")
+        
+        with col2:
+            st.image("images/projet 3/nettoyage_donnees/theorique.PNG", caption="Colonnes à garder obligatoirement")
+            
+        with col3:
+            st.image("images/projet 3/nettoyage_donnees/reel.PNG", caption="Collonnes réellement gardées après nettoyage")
+           
         # VERSION MOBILE
 
         st.header("📱 Version Mobile")
@@ -291,10 +323,8 @@ if selection == "Projets":
         with col2:
             st.image("placeholder_paginated.png", caption="Exemple Paginated Report (placeholder)")
 
-        # =========================
         # NOUVEAU MODÈLE DATA
-        # =========================
-
+        
         st.header("Refonte du Modèle de Données")
 
         st.subheader("Problème initial")
@@ -363,7 +393,7 @@ if selection == "Projets":
 # Page CV
 if selection == "CV":
     st.title("CV - Helena Steyaert")
-    st.image("images/CV .jpg",width=800)
+    st.image("images/CV.jpg",width=800)
     
     # Bouton de téléchargement
     st.download_button(
