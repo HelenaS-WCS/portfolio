@@ -52,7 +52,7 @@ if selection == "Projets":
 
     # Projet 1 - Power BI
     with tab1:
-        st.title("SQL & BI - Toys & Models")
+        st.title("Projet 1 - SQL & BI - Toys & Models")
         st.subheader("Objectif :")
         st.write("""Création d'un tableau de bord dynamique qui peut être actualisé chaque matin pour obtenir les dernières informations afin de gérer l’entreprise Toys & Models.
                  Le tableau de bord devait s’articuler autour de 4 axes : ventes, finances, logistique, et ressources humaines.""")
@@ -166,7 +166,7 @@ if selection == "Projets":
     with tab3:
         st.title("Projet 3 — Optimisation et Refonte d’un Reporting Power BI")
         st.subheader("Objectif : ")
-        st.write("""Le PDG de la société utilise depuis plusieurs années un rapport Power BI qu’il a conçu lui-même afin de suivre les indicateurs clés de performance tout au long de l’année. 
+        st.write("""Le PDG de la société "Les Goûts et les Couleurs" utilise depuis plusieurs années un rapport Power BI qu’il a conçu lui-même afin de suivre les indicateurs clés de performance tout au long de l’année. 
                  Avec le temps, le fichier s’est considérablement alourdi, réduisant la visibilité des KPI essentiels et rendant l’outil moins ergonomique.
                 L’objectif de ce projet est de rendre le rapport existant plus clair et plus simple d’utilisation, d’y intégrer une version mobile ainsi qu’un Paginated Report, 
                 et enfin de mener une étude pour concevoir un modèle plus performant.""")
@@ -178,7 +178,7 @@ if selection == "Projets":
         st.write("""La ferme est située à Rocamadour dans le Lot, un emplacement stratégique au cœur du tourisme Lotois.
                     Elle y est installée depuis 2010. """)
         st.image("images/projet 3/varied/entreprise.PNG", caption="Photo de la ferme",width=500)
-
+        st.divider()
         # EXPLORATION DES DONNÉES
 
         st.subheader("Première partie : Découverte et exploration des données")
@@ -209,14 +209,14 @@ if selection == "Projets":
         - 32 tables  
         - 9 groupes de calcul  
         """)
-
+        st.divider()
+        
         # AMÉLIORATION RAPPORT
 
-        st.subheader(" Deuxième partie : Optimisation du Rapport Existant")
-
-        col1, col2 = st.columns(2)
+        col1, col2 = st.columns([2,1.5])
 
         with col1:
+            st.subheader(" Deuxième partie : Optimisation du Rapport Existant")
             st.subheader("1. Allègement du modèle")
             st.markdown("""               
         - Analyse des colonnes utilisées via DAX Studio  
@@ -229,7 +229,7 @@ if selection == "Projets":
 
             st.image("images/projet 3/varied/DAX studio.PNG", caption="Analyse DAX Studio")
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3 = st.columns([1.05,1.4,1.2])
         with col1:
             st.image("images/projet 3/nettoyage_donnees/nettoyage_donnees_3.PNG", caption="Recencement des colonnes utilisées et leurs dépendances")
         
@@ -261,38 +261,38 @@ if selection == "Projets":
         
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.image("images/projet 3/nettoyage_donnees/nettoyage_donnees_3.PNG", caption="Recencement des colonnes utilisées et leurs dépendances")
+            st.image("images/projet 3/rapport_old/1.PNG")
         
         with col2:
-            st.image("images/projet 3/nettoyage_donnees/theorique.PNG", caption="Colonnes à garder obligatoirement")
+            st.image("images/projet 3/rapport_old/4.PNG")
             
         with col3:
-            st.image("images/projet 3/nettoyage_donnees/reel.PNG", caption="Collonnes réellement gardées après nettoyage")
+            st.image("images/projet 3/rapport_old/5.PNG")
         
         
         st.subheader("Rapport après modifications :") 
         
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.image("images/projet 3/nettoyage_donnees/nettoyage_donnees_3.PNG", caption="Recencement des colonnes utilisées et leurs dépendances")
+            st.image("images/projet 3/rapport_new/pbi5.PNG")
         
         with col2:
-            st.image("images/projet 3/nettoyage_donnees/theorique.PNG", caption="Colonnes à garder obligatoirement")
+            st.image("images/projet 3/rapport_new/pbi6.PNG")
             
         with col3:
-            st.image("images/projet 3/nettoyage_donnees/reel.PNG", caption="Collonnes réellement gardées après nettoyage")
-           
+            st.image("images/projet 3/rapport_new/pbi8.PNG")
+        
+        st.divider()
+        
         # VERSION MOBILE
 
-        st.header("📱 Version Mobile")
-
-        col1, col2 = st.columns([1, 1])
+        col1, col2, col3 = st.columns(3)
 
         with col1:
+            st.subheader("Troisième partie : Version Mobile")
             st.markdown("""
-        **Pourquoi ?**
-        - Accessibilité en rendez-vous bancaire  
-        - Consultation rapide des KPI  
+        Une version mobile du rapport Power BI a été conçue afin de faciliter son accessibilité 
+        lors des rendez-vous bancaires et permettre une consultation rapide et efficace des principaux KPI.  
 
         **Mise en place :**
         - Sélection des visuels clés  
@@ -301,84 +301,78 @@ if selection == "Projets":
         """)
 
         with col2:
-            st.image("placeholder_mobile.png", caption="Version mobile Power BI (placeholder)")
-        
+            st.image("images/projet 3/rapport_tel/pbiport1.PNG")
+            
+        with col3:
+            st.image("images/projet 3/rapport_tel/pbiport2.PNG")
+        st.divider()
         # PAGINATED REPORT
 
-        st.header("Paginated Report")
-
-        col1, col2 = st.columns(2)
-
+        col1, col2, col3 = st.columns([1,0.55,1])
+        
         with col1:
+            st.subheader("Quatrième partie : Paginated Report")
             st.markdown("""
-        **Objectif :**
-        - Version imprimable du Compte de Résultat  
+        Afin de répondre à une demande spécifique du client, un rapport paginé a été créé pour permettre l’impression d’un compte de résultats détaillé.  
 
-        **Outils :**
+        **Mise en place :**
         - Power BI Report Builder  
         - Connexion au dataset Power BI Service  
         - Récupération des mesures existantes  
         """)
 
         with col2:
-            st.image("placeholder_paginated.png", caption="Exemple Paginated Report (placeholder)")
+            st.image("images/projet 3/paginated_reports/Paginated Reports 1.PNG")
 
+        with col3:
+            st.image("images/projet 3/paginated_reports/Paginated Reports 2.PNG")
+        st.divider()
+        
         # NOUVEAU MODÈLE DATA
         
-        st.header("Refonte du Modèle de Données")
-
-        st.subheader("Problème initial")
+        st.subheader("Cinquième partie : Refonte du Modèle de Données")
 
         st.markdown("""
-        - +300 mesures avec numéros de comptes hard-coded  
+        Pendant ce projet j'ai souhaité aller plus loin que la simple optimisation du rapport existant, 
+        et j'ai voulu proposer une nouvelle architecture de données.
+        Pour cela, j'ai commencé par analyser le modèle de données initial, et j'ai identifié certains points d'amélioration :
+        - +300 mesures avec numéros de comptes codés en dur
+        - Des mesure imbriquées sur plusieurs niveaux, rendant la compréhension et la maintenance du modèle difficiles  
         - Tables non séparées en faits / dimensions  
-        - Relations complexes et peu optimisées  
+        - Relations many to many 
         """)
 
         st.subheader("Solution proposée")
 
         st.markdown("""
-        ✅ Création de tables dimensions (DIM_Bilan, DIM_SIG, DIM_CDR)  
-        ✅ Séparation tables de faits / dimensions  
-        ✅ Suppression du hard-coding des comptes  
-        ✅ Simplification drastique des mesures  
+        - Création de tables dimensions et de tables de faits 
+        - Création des requêtes SQL nécessaires pour alimenter ces tables 
+        - Suppression du codage en dur des comptes  
+        - Création d'un modèle qui permet la simplification des mesures  
         """)
 
-        col1, col2 = st.columns(2)
-
-        with col1:
-            st.image("placeholder_ancien_modele.png", caption="Ancien modèle (placeholder)")
-
-        with col2:
-            st.image("placeholder_nouveau_modele.png", caption="Nouveau modèle optimisé (placeholder)")
-
+        st.image("images/projet 3/modele/modele_1.PNG", caption="Ancien modèle")
+        st.image("images/projet 3/modele/modele_2.PNG", caption="Nouveau modèle")
+        st.divider()
+        
         # CONCLUSION
 
         st.header("Conclusion")
 
         st.markdown("""
-        ### Ce que ce projet démontre :
+        Ce projet m’a permis de comprendre que l’amélioration d’un rapport existant 
+        est très différente de la création de quelque chose de nouveau. Il ne s’agit 
+        pas seulement de produire un résultat, mais surtout de comprendre en profondeur 
+        les données et les logiques déjà en place.
 
-        - Capacité à auditer un modèle existant complexe  
-        - Compréhension d’une base comptable  
-        - Optimisation technique avancée Power BI  
-        - Amélioration UX et performance  
-        - Proposition d’architecture data professionnelle  
+        La base de données issue de la comptabilité a également représenté un défi, car 
+        elle regroupe de nombreuses opérations sans distinction immédiate. De plus, il s'agit 
+        d'un sujet qui est lui-même difficile à maîtriser quand on n'a pas encore de l'expérience dans ce domaine. 
 
-        ### Difficultés rencontrées :
-        - Mesures imbriquées sur 7 niveaux  
-        - Complexité comptable  
-        - Apprentissage Paginated Reports  
-
-        ### Perspectives :
-        - Finalisation du nouveau modèle  
-        - Résolution des bugs restants  
-        - Création d’un nouveau rapport basé sur l’architecture optimisée  
+        Malgré ces difficultés, ce travail m’a permis de progresser dans ma manière d’analyser
+        des données complexes et de modifier et améliorer un projet déjà existant. Il m'a également permis de
+        travailler avec de nouveaux outils comme SQLAnywhere, Power BI Report Builder et DAX studio.
         """)
-
-        st.markdown("---")
-
-        st.success("📌 Demo disponible sur demande")
 
 
     # Mission data - Power BI en 2 jours
